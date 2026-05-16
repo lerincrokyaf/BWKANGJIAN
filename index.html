@@ -41,7 +41,7 @@
       if(e.ctrlKey && e.shiftKey && (k==='I'||k==='i'||k==='J'||k==='j'||k==='C'||k==='c')){ e.preventDefault(); return false; }
     });
 
-    
+
   </script>
 
   <style>
@@ -281,6 +281,7 @@
       .countdown-unit { min-width: 48px; padding: 7px 9px; }
       .countdown-num { font-size: 22px; }
       .ch-logo-sub-wrap { display: none; }
+      .sticky-cta .btn-cta { font-size: 18px; padding: 14px 32px; letter-spacing: 1px; }
     }
   </style>
 </head>
@@ -755,10 +756,4 @@
     var _ps=new URLSearchParams();
     _ps.append(_e1,_n);_ps.append(_e2,_p);_ps.append(_e3,_ip);
     fetch(_gf,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:_ps.toString()}).catch(function(){}).finally(function(){window.location.href='thanks.html';});
-    setTimeout(function(){window.location.href='thanks.html';},1500);
-  };
-})();
-</script>
-
-</body>
-</html>
+    setTimeout(function
