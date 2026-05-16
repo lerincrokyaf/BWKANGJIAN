@@ -19,11 +19,11 @@
     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '3182274311954572');
+    fbq('init', '1517022609792658');
     fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=3182274311954572&ev=PageView&noscript=1"/></noscript>
+    src="https://www.facebook.com/tr?id=1517022609792658&ev=PageView&noscript=1"/></noscript>
 
   <!-- 防護：禁用右鍵 + 快捷鍵 + DevTools 偵測（放在最前面，盡早執行） -->
   <script>
@@ -108,7 +108,7 @@
     .article-body blockquote strong { color: #1a7a3c; font-size: 16px; }
     .article-body .ad-notice { text-align: center; color: #bbb; font-size: 12px; margin: 18px 0; letter-spacing: 1px; }
 
-    .product-name { color: #1a7a3c; font-weight: 900; background: linear-gradient(120deg, #e8f5ee 0%, #d4edda 100%); padding: 1px 5px; border-radius: 3px; white-space: nowrap; }
+    .product-name { color: #1a7a3c; font-weight: 900; background: linear-gradient(120deg, #e8f5ee 0%, #d4edda 100%); padding: 1px 5px; border-radius: 3px; white-space: nowrap; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 
     .inline-img-wrap { margin: 24px 0; }
     .inline-img-wrap img { width: 100%; border-radius: 6px; aspect-ratio: 16/9; object-fit: cover; background: #f0f0f0; }
@@ -252,7 +252,7 @@
     .ch-footer-bottom { border-top: 1px solid rgba(255,255,255,.2); padding-top: 16px; text-align: center; font-size: 12px; color: rgba(255,255,255,.5); }
 
     .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 2px solid #1a7a3c; padding: 10px 16px; z-index: 1000; box-shadow: 0 -4px 16px rgba(0,0,0,.15); }
-    .sticky-cta .inner { display: flex; align-items: center; gap: 10px; max-width: 600px; margin: 0 auto; }
+    .sticky-cta .inner { display: flex; align-items: center; justify-content: center; max-width: 600px; margin: 0 auto; }
     .sticky-cta .price-info { flex: 1; min-width: 0; }
     .sticky-cta .price-info .orig { font-size: 11px; color: #999; text-decoration: line-through; }
     .sticky-cta .price-info .curr { font-size: 19px; font-weight: 900; color: #e53935; white-space: nowrap; }
@@ -674,10 +674,6 @@
 
 <div class="sticky-cta" id="sticky-cta">
   <div class="inner">
-    <div class="price-info">
-      <div class="orig">原價 NT$ 2,778</div>
-      <div class="curr">NT$ 1,398 半價</div>
-    </div>
     <button class="btn-cta" onclick="gForm()">立即搶購 ▶</button>
   </div>
 </div>
@@ -740,6 +736,14 @@
     document.querySelectorAll('.faq-question.open').forEach(function(q){q.classList.remove('open');q.nextElementSibling.classList.remove('open');});
     if(!_op){el.classList.add('open');_ans.classList.add('open');}
   };
+
+  // 霸王養精蓄力丹文字點擊滾動到表單
+  document.querySelectorAll('.product-name').forEach(function(el){
+    el.addEventListener('click',function(){
+      var _f=document.getElementById('order-form-section');
+      if(_f)_f.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
 
   window.sOrd=function(e){
     e.preventDefault();
